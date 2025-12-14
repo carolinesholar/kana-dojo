@@ -46,7 +46,7 @@ If you discover a security vulnerability on our website, we encourage responsibl
 
 If you believe you have found a security issue, please contact us immediately via:
 
-- 📧 **Email:** langdojo.dev@outlook.com
+- 📧 **Email:** dev@kanadojo.com
 - 📩 **Bug Report Form:** kanadojo.com/report 
 
 We appreciate **ethical hacking and responsible disclosure** and will investigate reported vulnerabilities promptly.
@@ -83,7 +83,7 @@ We may update this Security Policy from time to time. Any changes will be **publ
 
 For any questions or concerns about this Security Policy, you can reach us at:
 
-📧 **Email:** *lingdojo.dev@gmail.com* 
+📧 **Email:** *dev@kanadojo.com* 
 
 ---
 

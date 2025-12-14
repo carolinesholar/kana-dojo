@@ -302,7 +302,7 @@ If KanaDojo expands to physical locations or local services:
 
 For SEO-related questions or suggestions:
 
-- Email: lingdojo.dev@gmail.com
+- Email: dev@kanadojo.com
 - GitHub: https://github.com/lingdojo/kanadojo
 
 ---

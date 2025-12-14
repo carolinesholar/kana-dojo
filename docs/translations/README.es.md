@@ -1,6 +1,6 @@
 <div id="top"></div>
 
-<a href="#about-kanadojo">Sobre KanaDojo</a> | <a href="#screenshots">Capturas de pantalla</a> | <a href="#ui-design-philosophy">Filosofía de UI y Diseño</a> | <a href="#tech-stack">Tecnologías utilizadas</a> | <a href="#getting-started">Primeros Pasos</a> | <a href="#project-structure">Estructura de proyecto</a> | <a href="#contributing">Contribuir</a> | <a href="#license">Licencia</a> | <a href="#acknowledgments">Agradecimientos</a> | <a href="#contact-links">Contacto y Enlaces</a> 
+<a href="#about-kanadojo">Sobre KanaDojo</a> | <a href="#screenshots">Capturas de pantalla</a> | <a href="#ui-design-philosophy">Filosofía de UI y Diseño</a> | <a href="#tech-stack">Tecnologías utilizadas</a> | <a href="#getting-started">Primeros Pasos</a> | <a href="#project-structure">Estructura de proyecto</a> | <a href="#contributing">Contribuir</a> | <a href="#license">Licencia</a> | <a href="#acknowledgments">Agradecimientos</a> | <a href="#contact-links">Contacto y Enlaces</a>
 
 # KanaDojo かな道場
 
@@ -21,6 +21,7 @@
 ---
 
 <a id="about-kanadojo"></a>
+
 ## 📖 Sobre KanaDojo
 
 KanaDojo es una plataforma de aprendizaje de japonés atractiva y basada en la web que hace que dominar Hiragana, Katakana, Kanji y el vocabulario, sea divertido e intuitivo. Construido con un enfoque en la estética, la personalización y el aprendizaje efectivo, KanaDojo proporciona un entorno de entrenamiento inmersivo para los estudiantes de japonés de todos los niveles.
@@ -68,6 +69,7 @@ Cada dojo admite cuatro atractivos modos de entrenamiento para reforzar el apren
 ---
 
 <a id="screenshots"></a>
+
 ## 🖼️ Capturas de pantalla
 
 <div align="center">
@@ -93,6 +95,7 @@ Cada dojo admite cuatro atractivos modos de entrenamiento para reforzar el apren
 ---
 
 <a id="ui-design-philosophy"></a>
+
 ## 🎨 Filosofía de UI y Diseño
 
 KanaDojo utiliza a **estética minimalista** combinada con **flexibilidad máxima**. Esta filosofía de diseño se centra en:
@@ -128,6 +131,7 @@ KanaDojo utiliza a **estética minimalista** combinada con **flexibilidad máxim
 ---
 
 <a id="tech-stack"></a>
+
 ## 🛠️ Tecnologías utilizadas
 
 KanaDojo esta construido con tecnologías web modernas para un rendimiento óptimo y una excelente experiencia para los desarrolladores:
@@ -173,6 +177,7 @@ KanaDojo esta construido con tecnologías web modernas para un rendimiento ópti
 ---
 
 <a id="getting-started"></a>
+
 ## 🚀 Primeros Pasos
 
 ### Prerrequisitos
@@ -231,18 +236,21 @@ Si encuentras problemas durante el desarrollo, prueba estas soluciones:
 #### Limpiar Caché de Next.js
 
 **macOS/Linux:**
+
 ```bash
 rm -rf .next
 npm run dev
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force .next
 npm run dev
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q .next
 npm run dev
@@ -251,18 +259,21 @@ npm run dev
 #### Limpiar Node Modules y Reinstalar
 
 **macOS/Linux:**
+
 ```bash
 rm -rf node_modules package-lock.json
 npm install
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force node_modules, package-lock.json
 npm install
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q node_modules
 del package-lock.json
@@ -272,6 +283,7 @@ npm install
 #### Limpiar Todas las Cachés (Opción Nuclear)
 
 **macOS/Linux:**
+
 ```bash
 rm -rf .next node_modules package-lock.json
 npm cache clean --force
@@ -280,6 +292,7 @@ npm run dev
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force .next, node_modules, package-lock.json
 npm cache clean --force
@@ -288,6 +301,7 @@ npm run dev
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q .next
 rmdir /s /q node_modules
@@ -302,6 +316,7 @@ npm run dev
 Si el puerto 3000 ya está en uso:
 
 **macOS/Linux:**
+
 ```bash
 # Encontrar proceso usando el puerto 3000
 lsof -i :3000
@@ -311,6 +326,7 @@ kill -9 PID
 ```
 
 **Windows (PowerShell/Command Prompt):**
+
 ```cmd
 # Encontrar proceso usando el puerto 3000
 netstat -ano | findstr :3000
@@ -320,12 +336,14 @@ taskkill /PID PID /F
 ```
 
 O simplemente ejecuta en un puerto diferente:
+
 ```bash
 # macOS/Linux/Windows
 PORT=3001 npm run dev
 ```
 
 <a id="project-structure"></a>
+
 ## 📁 Estructura de proyecto
 
 ```
@@ -419,6 +437,7 @@ Cada modo de juego es una ruta dinámica (`/[contentType]/train/[gameMode]`) que
 ---
 
 <a id="contributing"></a>
+
 ## 🤝 Contribuir
 
 ¡Las contribuciones son bienvenidas! KanaDojo es un proyecto de código abierto construido por la comunidad y para la comunidad.
@@ -442,6 +461,7 @@ Cada modo de juego es una ruta dinámica (`/[contentType]/train/[gameMode]`) que
 ---
 
 <a id="license"></a>
+
 ## 📄 Licencia
 
 Este proyecto está bajo la Licencia AGPL 3.0 - consulta el archivo [LICENSE.md](LICENSE.md) para más detalles.
@@ -449,6 +469,7 @@ Este proyecto está bajo la Licencia AGPL 3.0 - consulta el archivo [LICENSE.md]
 ---
 
 <a id="acknowledgments"></a>
+
 ## 🙏 Agradecimientos
 
 - Datos e información sobre caracteres del idioma japonés
@@ -458,11 +479,12 @@ Este proyecto está bajo la Licencia AGPL 3.0 - consulta el archivo [LICENSE.md]
 ---
 
 <a id="contact-links"></a>
+
 ## 📞 Contacto y Enlaces
 
 - **Sitio Web**: [kanadojo.com](https://kanadojo.com)
 - **Repositorio**: [github.com/lingdojo/kanadojo](https://github.com/lingdojo/kanadojo)
-- **Email**: lingdojo.dev@gmail.com
+- **Email**: dev@kanadojo.com
 
 ---
 

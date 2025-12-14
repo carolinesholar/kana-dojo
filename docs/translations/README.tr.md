@@ -20,6 +20,7 @@
 </div>
 
 <a id="about-kanadojo"></a>
+
 ## 📖 KanaDojo Hakkında
 
 KanaDojo, Hiragana, Katakana, Kanji ve kelime bilgisinde ustalaşmayı eğlenceli ve kolay hale getiren etkileşimli bir web tabanlı Japonca öğrenme platformudur. Estetiğe, özelleştirilebilirliğe ve etkili öğrenmeye odaklanılarak tasarlanan KanaDojo, her seviyeden Japonca öğrencisi için kapsamlı bir eğitim ortamı sunar.
@@ -65,6 +66,7 @@ Her dojo, öğrenmeyi pekiştirmek için dört ilgi çekici eğitim modunu deste
 - Framer Motion tarafından sağlanan akıcı animasyonlar ve geçişler
 
 <a id="screenshots"></a>
+
 ## 🖼️ Ekran Görüntüleri
 
 <div align="center">
@@ -90,6 +92,7 @@ Her dojo, öğrenmeyi pekiştirmek için dört ilgi çekici eğitim modunu deste
 </div>
 
 <a id="ui-design-philosophy"></a>
+
 ## 🎨 Arayüz & Tasarım Felsefesi
 
 KanaDojo, maksimum esneklikle birleştirilmiş minimalist bir estetiği benimser. Tasarım felsefesinin merkezinde şunlar yer alır:
@@ -103,7 +106,7 @@ KanaDojo, maksimum esneklikle birleştirilmiş minimalist bir estetiği benimser
 
 ### Estetik Özeleştirmeler
 
-- Yumşak pastel renklerden canlı neonlara kadar uzanan geniş tema kütüphanesi (100+ seçenek) 
+- Yumşak pastel renklerden canlı neonlara kadar uzanan geniş tema kütüphanesi (100+ seçenek)
 - Hem açık ve hem de koyu modu destekler
 - Uzun süreli çalışma seansları sırasında göze rahat gelen, özenle seçilmiş renk paletleri
 - Kesintisiz tema geçişleri
@@ -123,6 +126,7 @@ KanaDojo, maksimum esneklikle birleştirilmiş minimalist bir estetiği benimser
 - Gerçek Japon metin örnekleriyle yazı tipi önizlemeleri
 
 <a id="tech-stack"></a>
+
 ## 🛠️ Kullanılan Teknolojiler
 
 KanaDojo, en iyi performans ve geliştirici deneyimi için modern web teknolojileri ile geliştirilmiştir:
@@ -166,6 +170,7 @@ KanaDojo, en iyi performans ve geliştirici deneyimi için modern web teknolojil
 - **[@vercel/speed-insights](https://vercel.com/docs/speed-insights)** - Performans izleme
 
 <a id="getting-started"></a>
+
 ## 🚀 Başlangıç
 
 ### Önkoşullar
@@ -224,18 +229,21 @@ Geliştirme süresince sorunlar ile karşılaştıysanız, şu çözümleri dene
 #### Next.js Önbelleğini Temizle
 
 **macOS/Linux:**
+
 ```bash
 rm -rf .next
 npm run dev
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force .next
 npm run dev
 ```
 
 **Windows (Komut İstemi):**
+
 ```cmd
 rmdir /s /q .next
 npm run dev
@@ -244,18 +252,21 @@ npm run dev
 #### Node Modüllerini Temizle ve Tekrar Yükle
 
 **macOS/Linux:**
+
 ```bash
 rm -rf node_modules package-lock.json
 npm install
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force node_modules, package-lock.json
 npm install
 ```
 
 **Windows (Komut İstemi):**
+
 ```cmd
 rmdir /s /q node_modules
 del package-lock.json
@@ -265,6 +276,7 @@ npm install
 #### Tüm Önbellekleri Temizle (Kesin Çözüm)
 
 **macOS/Linux:**
+
 ```bash
 rm -rf .next node_modules package-lock.json
 npm cache clean --force
@@ -273,6 +285,7 @@ npm run dev
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force .next, node_modules, package-lock.json
 npm cache clean --force
@@ -281,6 +294,7 @@ npm run dev
 ```
 
 **Windows (Komut İstemi):**
+
 ```cmd
 rmdir /s /q .next
 rmdir /s /q node_modules
@@ -295,6 +309,7 @@ npm run dev
 Eğer 3000 portu zaten kullanımdaysa:
 
 **macOS/Linux:**
+
 ```bash
 # 3000 portunu kullanmakta olan işlemi bulun
 lsof -i :3000
@@ -304,6 +319,7 @@ kill -9 PID
 ```
 
 **Windows (PowerShell/Komut İstemi):**
+
 ```cmd
 # 3000 portunu kullanmakta olan işlemi bulun
 netstat -ano | findstr :3000
@@ -313,12 +329,14 @@ taskkill /PID PID /F
 ```
 
 Veya farklı bir portta çalıştırın:
+
 ```bash
 # macOS/Linux/Windows
 PORT=3001 npm run dev
 ```
 
 <a id="project-structure"></a>
+
 ## 📁 Proje Yapısı
 
 ```
@@ -414,6 +432,7 @@ Her oyun modu, aşağıdaki işlevleri yerine getiren dinamik bir yoldur (`/[con
 4. İstatistikleri (doğru, yanlış, seri) takip eder
 
 <a id="contributing"></a>
+
 ## 🤝 Katkıda Bulunma
 
 Katkılarınızı bekliyoruz! KanaDojo, topluluk tarafından topluluk için geliştirilen açık kaynaklı bir projedir. Nasıl katkıda bulunacağınıza dair daha ayrıntılı bilgi için [CONTRIBUTING.md](CONTRIBUTING.md) dosyasına göz atın.
@@ -435,11 +454,13 @@ Katkılarınızı bekliyoruz! KanaDojo, topluluk tarafından topluluk için geli
 - Bileşenleri tek bir amaca odaklı ve yeniden kullanılabilir tutun
 
 <a id="license"></a>
+
 ## 📄 Lisans
 
 Bu proje AGPL 3.0 Lisansı altında lisanslanmıştır - ayrıntılar için [LICENSE.md](LICENSE.md) dosyasına bakın.
 
 <a id="acknowledgments"></a>
+
 ## 🙏 Teşekkürler
 
 - Japonca dil verileri ve karakter bilgileri
@@ -447,17 +468,18 @@ Bu proje AGPL 3.0 Lisansı altında lisanslanmıştır - ayrıntılar için [LIC
 - KanaDojo'yu daha iyi hale getirmek için katkı katkıda bulunanlar
 
 <a id="contact-links"></a>
+
 ## 📞 İletişim & Bağlantılar
 
 - **Web sitesi**: [kanadojo.com](https://kanadojo.com)
 - **Depo**: [github.com/lingdojo/kanadojo](https://github.com/lingdojo/kanadojo)
-- **E-posta**: lingdojo.dev@gmail.com
+- **E-posta**: dev@kanadojo.com
 
 ---
 
 <div align="center">
 
-****Dünya çapındaki Japonca öğrenenler için ❤️ ile yapılmıştır**
+\***\*Dünya çapındaki Japonca öğrenenler için ❤️ ile yapılmıştır**
 
 がんばって！ (Ganbatte! - Elinden gelenin en iyisini yap!)
 

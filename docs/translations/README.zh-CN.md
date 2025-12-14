@@ -4,7 +4,7 @@
 
 **KanaDojo 支持多语言，感谢社区贡献：**
 
-[English](../../README.md)  **/**  [Español](docs/translations/README.es.md) **/** [Français (in progress)](docs/translations/README.fr.md)  **/** [Deutsch](docs/translations/README.de.md) **/** [Português](docs/translations/README.pt-br.md) **/** [Türkçe](docs/translations/README.tr.md) **/**  中文（简体）**/** [中文（繁體）](docs/translations/README.zh-tw.md) **/**  [हिन्दी](docs/translations/README.hin.md)  **/**  <span dir="ltr">[العربية](docs/translations/README.ar.md)</span>  **/** [Русский](docs/translations/README.ru.md)
+[English](../../README.md) **/** [Español](docs/translations/README.es.md) **/** [Français (in progress)](docs/translations/README.fr.md) **/** [Deutsch](docs/translations/README.de.md) **/** [Português](docs/translations/README.pt-br.md) **/** [Türkçe](docs/translations/README.tr.md) **/** 中文（简体）**/** [中文（繁體）](docs/translations/README.zh-tw.md) **/** [हिन्दी](docs/translations/README.hin.md) **/** <span dir="ltr">[العربية](docs/translations/README.ar.md)</span> **/** [Русский](docs/translations/README.ru.md)
 
 # KanaDojo かな道場
 
@@ -26,6 +26,7 @@
 ---
 
 <a id="about-kanadojo"></a>
+
 ## 📖 关于 KanaDojo
 
 KanaDojo 是一款有趣的 Web 端日语学习平台，帮助你直观且高效地掌握平假名、片假名、汉字与词汇。它注重美观、可定制性与有效学习，致力于为各个水平的日语学习者提供沉浸式的训练体验。
@@ -73,6 +74,7 @@ KanaDojo 是一款有趣的 Web 端日语学习平台，帮助你直观且高效
 ---
 
 <a id="screenshots"></a>
+
 ## 🖼️ 截图
 
 <div align="center">
@@ -100,6 +102,7 @@ KanaDojo 是一款有趣的 Web 端日语学习平台，帮助你直观且高效
 ---
 
 <a id="ui-design-philosophy"></a>
+
 ## 🎨 UI 与设计理念
 
 KanaDojo 结合了**极简美学**与**最大化的灵活性**。其设计理念包括：
@@ -135,6 +138,7 @@ KanaDojo 结合了**极简美学**与**最大化的灵活性**。其设计理念
 ---
 
 <a id="tech-stack"></a>
+
 ## 🛠️ 技术栈
 
 KanaDojo 采用现代 Web 技术，兼顾性能与开发体验：
@@ -180,6 +184,7 @@ KanaDojo 采用现代 Web 技术，兼顾性能与开发体验：
 ---
 
 <a id="getting-started"></a>
+
 ## 🚀 快速开始
 
 ### 前置条件
@@ -239,18 +244,21 @@ npm run postbuild
 #### 清除 Next.js 缓存
 
 **macOS/Linux:**
+
 ```bash
 rm -rf .next
 npm run dev
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force .next
 npm run dev
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q .next
 npm run dev
@@ -259,18 +267,21 @@ npm run dev
 #### 清除 Node Modules 并重新安装
 
 **macOS/Linux:**
+
 ```bash
 rm -rf node_modules package-lock.json
 npm install
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force node_modules, package-lock.json
 npm install
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q node_modules
 del package-lock.json
@@ -280,6 +291,7 @@ npm install
 #### 清除所有缓存（核选项）
 
 **macOS/Linux:**
+
 ```bash
 rm -rf .next node_modules package-lock.json
 npm cache clean --force
@@ -288,6 +300,7 @@ npm run dev
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force .next, node_modules, package-lock.json
 npm cache clean --force
@@ -296,6 +309,7 @@ npm run dev
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q .next
 rmdir /s /q node_modules
@@ -310,6 +324,7 @@ npm run dev
 如果端口 3000 已被占用：
 
 **macOS/Linux:**
+
 ```bash
 # 查找使用端口 3000 的进程
 lsof -i :3000
@@ -319,6 +334,7 @@ kill -9 PID
 ```
 
 **Windows (PowerShell/Command Prompt):**
+
 ```cmd
 # 查找使用端口 3000 的进程
 netstat -ano | findstr :3000
@@ -328,12 +344,14 @@ taskkill /PID PID /F
 ```
 
 或者直接在不同端口上运行：
+
 ```bash
 # macOS/Linux/Windows
 PORT=3001 npm run dev
 ```
 
 <a id="project-structure"></a>
+
 ## 📁 项目结构
 
 ```
@@ -434,6 +452,7 @@ kanadojo/
 ---
 
 <a id="contributing"></a>
+
 ## 🤝 参与贡献
 
 欢迎贡献！KanaDojo 是由社区构建、服务社区的开源项目。查看 [CONTRIBUTING.md](CONTRIBUTING.md) 了解更多贡献指南。
@@ -457,6 +476,7 @@ kanadojo/
 ---
 
 <a id="license"></a>
+
 ## 📄 许可证
 
 本项目基于 AGPL 3.0 许可协议开源——详见 [LICENSE.md](LICENSE.md)。
@@ -464,6 +484,7 @@ kanadojo/
 ---
 
 <a id="acknowledgments"></a>
+
 ## 🙏 致谢
 
 - 日语语言数据与字符信息
@@ -473,11 +494,12 @@ kanadojo/
 ---
 
 <a id="contact-links"></a>
+
 ## 📞 联系与链接
 
 - **网站**： [kanadojo.com](https://kanadojo.com)
 - **仓库**： [github.com/lingdojo/kanadojo](https://github.com/lingdojo/kanadojo)
-- **邮箱**： lingdojo.dev@gmail.com
+- **邮箱**： dev@kanadojo.com
 
 ---
 

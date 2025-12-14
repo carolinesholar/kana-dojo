@@ -21,6 +21,7 @@
 ---
 
 <a id="about-kanadojo"></a>
+
 ## 📖 關於 KanaDojo
 
 KanaDojo 是一個互動式網頁版的日語學習平台，讓您能以有趣且直覺的方式學習平假名、片假名、漢字和詞彙。KanaDojo 專注於美學設計、豐富自訂與高效學習，為所有程度的日語學習者提供一個沉浸式的訓練環境。
@@ -68,6 +69,7 @@ KanaDojo 是一個互動式網頁版的日語學習平台，讓您能以有趣�
 ---
 
 <a id="screenshots"></a>
+
 ## 🖼️ 介面展示
 
 <div align="center">
@@ -93,6 +95,7 @@ KanaDojo 是一個互動式網頁版的日語學習平台，讓您能以有趣�
 ---
 
 <a id="ui-design-philosophy"></a>
+
 ## 🎨 使用者介面與設計理念
 
 KanaDojo 秉持結合**極簡美學**與**最大彈性**的理念，其核心設計理念如下：
@@ -128,6 +131,7 @@ KanaDojo 秉持結合**極簡美學**與**最大彈性**的理念，其核心設
 ---
 
 <a id="tech-stack"></a>
+
 ## 🛠️ 技術棧
 
 KanaDojo 採現代化網頁技術打造，以提供最佳效能與開發者體驗：
@@ -173,6 +177,7 @@ KanaDojo 採現代化網頁技術打造，以提供最佳效能與開發者體�
 ---
 
 <a id="getting-started"></a>
+
 ## 🚀 開始使用
 
 ### 環境需求
@@ -231,18 +236,21 @@ npm run postbuild
 #### 清除 Next.js 快取
 
 **macOS/Linux:**
+
 ```bash
 rm -rf .next
 npm run dev
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force .next
 npm run dev
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q .next
 npm run dev
@@ -251,18 +259,21 @@ npm run dev
 #### 清除 Node Modules 並重新安裝
 
 **macOS/Linux:**
+
 ```bash
 rm -rf node_modules package-lock.json
 npm install
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force node_modules, package-lock.json
 npm install
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q node_modules
 del package-lock.json
@@ -272,6 +283,7 @@ npm install
 #### 清除所有快取（最終手段）
 
 **macOS/Linux:**
+
 ```bash
 rm -rf .next node_modules package-lock.json
 npm cache clean --force
@@ -280,6 +292,7 @@ npm run dev
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force .next, node_modules, package-lock.json
 npm cache clean --force
@@ -288,6 +301,7 @@ npm run dev
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q .next
 rmdir /s /q node_modules
@@ -302,6 +316,7 @@ npm run dev
 如果連接埠 3000 已被佔用：
 
 **macOS/Linux:**
+
 ```bash
 # 尋找使用連接埠 3000 的程序
 lsof -i :3000
@@ -311,6 +326,7 @@ kill -9 PID
 ```
 
 **Windows (PowerShell/Command Prompt):**
+
 ```cmd
 # 尋找使用連接埠 3000 的程序
 netstat -ano | findstr :3000
@@ -320,12 +336,14 @@ taskkill /PID PID /F
 ```
 
 或直接在不同連接埠執行：
+
 ```bash
 # macOS/Linux/Windows
 PORT=3001 npm run dev
 ```
 
 <a id="project-structure"></a>
+
 ## 📁 專案架構
 
 ```
@@ -414,6 +432,7 @@ kanadojo/
 ---
 
 <a id="contributing"></a>
+
 ## 🤝 貢獻
 
 歡迎貢獻！KanaDojo 是一個開放原始碼專案，由社群打造、為社群服務，更多貢獻資訊請參考 [CONTRIBUTING.md](CONTRIBUTING.md)。
@@ -437,6 +456,7 @@ kanadojo/
 ---
 
 <a id="license"></a>
+
 ## 📄 授權條款
 
 此專案採用 AGPL 3.0 授權，詳情請見 [LICENSE.md](LICENSE.md) 檔案。
@@ -444,6 +464,7 @@ kanadojo/
 ---
 
 <a id="acknowledgments"></a>
+
 ## 🙏 致謝
 
 - 日文語言資料與字元資訊的來源
@@ -453,11 +474,12 @@ kanadojo/
 ---
 
 <a id="contact-links"></a>
+
 ## 📞 聯絡資訊與鏈結
 
 - **網站**：[kanadojo.com](https://kanadojo.com)
 - **儲存庫**：[github.com/lingdojo/kanadojo](https://github.com/lingdojo/kanadojo)
-- **電子郵件**: lingdojo.dev@gmail.com
+- **電子郵件**: dev@kanadojo.com
 
 ---
 

@@ -21,6 +21,7 @@ Eine ästhetische, minimalistische und hochgradig anpassbare Plattform zur Beher
 ---
 
 <a id="about-kanadojo"></a>
+
 ## 📖 Über KanaDojo
 
 **KanaDojo** ist eine fesselnde, webbasierte Lernplattform für Japanisch, die das Meistern von Hiragana, Katakana, Kanji und Vokabeln spaßig und intuitiv gestaltet. Entwickelt mit Fokus auf **Ästhetik**, **Anpassbarkeit** und **effektives Lernen**, bietet KanaDojo eine immersive Trainingsumgebung für Japanischlernende aller Niveaus.
@@ -70,6 +71,7 @@ Jedes Dojo unterstützt **vier fesselnde Trainingsmodi** zur Lernverstärkung:
 ---
 
 <a id="screenshots"></a>
+
 ## 🖼️ Screenshots
 
 <div align="center">
@@ -95,6 +97,7 @@ Jedes Dojo unterstützt **vier fesselnde Trainingsmodi** zur Lernverstärkung:
 ---
 
 <a id="ui-design-philosophy"></a>
+
 ## 🎨 UI & Design-Philosophie
 
 KanaDojo verbindet eine **minimalistische Ästhetik** mit **maximaler Flexibilität**. Die Design-Philosophie konzentriert sich auf:
@@ -130,6 +133,7 @@ KanaDojo verbindet eine **minimalistische Ästhetik** mit **maximaler Flexibilit
 ---
 
 <a id="tech-stack"></a>
+
 ## 🛠️ Technischer Stack
 
 KanaDojo wurde mit modernen Web-Technologien für optimale Leistung und Entwicklererfahrung erstellt:
@@ -175,6 +179,7 @@ KanaDojo wurde mit modernen Web-Technologien für optimale Leistung und Entwickl
 ---
 
 <a id="getting-started"></a>
+
 ## 🚀 Erste Schritte
 
 ### Voraussetzungen
@@ -233,18 +238,21 @@ Wenn Sie während der Entwicklung auf Probleme stoßen, versuchen Sie diese Lös
 #### Next.js Cache Löschen
 
 **macOS/Linux:**
+
 ```bash
 rm -rf .next
 npm run dev
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force .next
 npm run dev
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q .next
 npm run dev
@@ -253,18 +261,21 @@ npm run dev
 #### Node Modules Löschen und Neu Installieren
 
 **macOS/Linux:**
+
 ```bash
 rm -rf node_modules package-lock.json
 npm install
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force node_modules, package-lock.json
 npm install
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q node_modules
 del package-lock.json
@@ -274,6 +285,7 @@ npm install
 #### Alle Caches Löschen (Nukleare Option)
 
 **macOS/Linux:**
+
 ```bash
 rm -rf .next node_modules package-lock.json
 npm cache clean --force
@@ -282,6 +294,7 @@ npm run dev
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force .next, node_modules, package-lock.json
 npm cache clean --force
@@ -290,6 +303,7 @@ npm run dev
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q .next
 rmdir /s /q node_modules
@@ -304,6 +318,7 @@ npm run dev
 Wenn Port 3000 bereits verwendet wird:
 
 **macOS/Linux:**
+
 ```bash
 # Prozess finden, der Port 3000 verwendet
 lsof -i :3000
@@ -313,6 +328,7 @@ kill -9 PID
 ```
 
 **Windows (PowerShell/Command Prompt):**
+
 ```cmd
 # Prozess finden, der Port 3000 verwendet
 netstat -ano | findstr :3000
@@ -322,12 +338,14 @@ taskkill /PID PID /F
 ```
 
 Oder einfach auf einem anderen Port ausführen:
+
 ```bash
 # macOS/Linux/Windows
 PORT=3001 npm run dev
 ```
 
 <a id="project-structure"></a>
+
 ## 📁 Projektstruktur
 
 ```
@@ -421,6 +439,7 @@ Jeder Spielmodus ist eine dynamische Route (`/[contentType]/train/[gameMode]`), 
 ---
 
 <a id="contributing"></a>
+
 ## 🤝 Mitwirken (Contributing)
 
 Beiträge sind willkommen! KanaDojo ist ein Open-Source-Projekt, das von der Community für die Community entwickelt wurde. Lesen Sie [CONTRIBUTING.md](CONTRIBUTING.md) für detailliertere Informationen zum Mitwirken.
@@ -444,6 +463,7 @@ Beiträge sind willkommen! KanaDojo ist ein Open-Source-Projekt, das von der Com
 ---
 
 <a id="license"></a>
+
 ## 📄 Lizenz
 
 Dieses Projekt ist unter der **AGPL 3.0 Lizenz** lizenziert – Details finden Sie in der Datei [LICENSE.md](LICENSE.md).
@@ -451,6 +471,7 @@ Dieses Projekt ist unter der **AGPL 3.0 Lizenz** lizenziert – Details finden S
 ---
 
 <a id="acknowledgments"></a>
+
 ## 🙏 Danksagungen
 
 - Japanische Sprachdaten und Zeicheninformationen.
@@ -460,11 +481,12 @@ Dieses Projekt ist unter der **AGPL 3.0 Lizenz** lizenziert – Details finden S
 ---
 
 <a id="contact-links"></a>
+
 ## 📞 Kontakt & Links
 
 - **Webseite**: [https://kanadojo.com](https://kanadojo.com)
 - **Repository**: [https://github.com/lingdojo/kanadojo](https://github.com/lingdojo/kanadojo)
-- **E-Mail**: lingdojo.dev@gmail.com
+- **E-Mail**: dev@kanadojo.com
 
 ---
 

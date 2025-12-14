@@ -28,6 +28,7 @@ KanaDojo uses **namespace-based JSON files** for translations. Each feature has 
 ### Supported Languages
 
 Currently, we support:
+
 - 🇬🇧 **English (en)** - Reference language
 - 🇪🇸 **Spanish (es)**
 - 🇯🇵 **Japanese (ja)**
@@ -60,17 +61,17 @@ core/i18n/locales/
 
 ### Namespaces
 
-| Namespace | Description | Example Keys |
-|-----------|-------------|--------------|
-| `common.json` | Reusable UI elements (buttons, messages) | `buttons.submit`, `messages.loading` |
-| `navigation.json` | Menu, breadcrumbs, footer | `menu.home`, `footer.privacy` |
-| `kana.json` | Hiragana/Katakana learning feature | `game.score`, `results.accuracy` |
-| `kanji.json` | Kanji learning feature | `selection.byLevel`, `details.meaning` |
-| `vocabulary.json` | Vocabulary learning feature | `categories.verbs`, `game.streak` |
-| `achievements.json` | Achievement system | `unlocked`, `rarity.legendary` |
-| `statistics.json` | Progress tracking and stats | `overview.totalStudyTime`, `charts.dailyActivity` |
-| `settings.json` | App configuration | `appearance.theme`, `audio.volume` |
-| `errors.json` | Error messages | `validation.required`, `network.timeout` |
+| Namespace           | Description                              | Example Keys                                      |
+| ------------------- | ---------------------------------------- | ------------------------------------------------- |
+| `common.json`       | Reusable UI elements (buttons, messages) | `buttons.submit`, `messages.loading`              |
+| `navigation.json`   | Menu, breadcrumbs, footer                | `menu.home`, `footer.privacy`                     |
+| `kana.json`         | Hiragana/Katakana learning feature       | `game.score`, `results.accuracy`                  |
+| `kanji.json`        | Kanji learning feature                   | `selection.byLevel`, `details.meaning`            |
+| `vocabulary.json`   | Vocabulary learning feature              | `categories.verbs`, `game.streak`                 |
+| `achievements.json` | Achievement system                       | `unlocked`, `rarity.legendary`                    |
+| `statistics.json`   | Progress tracking and stats              | `overview.totalStudyTime`, `charts.dailyActivity` |
+| `settings.json`     | App configuration                        | `appearance.theme`, `audio.volume`                |
+| `errors.json`       | Error messages                           | `validation.required`, `network.timeout`          |
 
 ---
 
@@ -85,12 +86,14 @@ core/i18n/locales/
 ### Option 1: Edit JSON Files Directly (Recommended for Developers)
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/yourusername/kanadojo.git
    cd kanadojo
    ```
 
 2. **Find your language folder**
+
    ```bash
    cd core/i18n/locales/es  # For Spanish
    ```
@@ -101,6 +104,7 @@ core/i18n/locales/
    - Translate only the **values**, not the **keys**
 
 4. **Validate your translations**
+
    ```bash
    npm run i18n:validate
    ```
@@ -110,9 +114,11 @@ core/i18n/locales/
 ### Option 2: Use CSV Export (Recommended for Non-Technical Translators)
 
 1. **Export translations to CSV**
+
    ```bash
    npm run i18n:export-csv
    ```
+
    This creates CSV files in `scripts/i18n/reports/`
 
 2. **Edit in Excel/Google Sheets**
@@ -134,6 +140,7 @@ core/i18n/locales/
 ### 1. Choose a File
 
 Start with the file you're most comfortable with. We recommend:
+
 - Beginners: `common.json` (buttons, simple messages)
 - Intermediate: `navigation.json`, `errors.json`
 - Advanced: Feature-specific files (`kana.json`, `kanji.json`)
@@ -163,6 +170,7 @@ JSON files use nested objects. For example:
 #### ✅ Correct Example
 
 **English (en/common.json):**
+
 ```json
 {
   "buttons": {
@@ -173,6 +181,7 @@ JSON files use nested objects. For example:
 ```
 
 **Spanish (es/common.json):**
+
 ```json
 {
   "buttons": {
@@ -207,6 +216,7 @@ Some translations have **variables** in `{{double braces}}`:
 ```
 
 **Rules:**
+
 - Keep the variable names **exactly** as they are: `{{points}}`, `{{name}}`
 - You can change the text around them
 - The order can change based on your language's grammar
@@ -260,6 +270,7 @@ namespace.section.component.action
 ```
 
 Examples:
+
 - `common.buttons.submit` → Common namespace → Buttons section → Submit action
 - `kana.game.nextQuestion` → Kana namespace → Game section → Next question
 - `settings.appearance.theme` → Settings namespace → Appearance section → Theme
@@ -276,42 +287,45 @@ Examples:
 
 ### Common Variables
 
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `{{count}}` | Numeric count | "You have {{count}} achievements" |
-| `{{points}}` | Score/points | "Score: {{points}}" |
-| `{{seconds}}` | Time in seconds | "Time left: {{seconds}}s" |
-| `{{name}}` | User/item name | "Hello, {{name}}!" |
-| `{{date}}` | Date/timestamp | "Earned on {{date}}" |
-| `{{percentage}}` | Percentage value | "Accuracy: {{percentage}}%" |
-| `{{current}}` | Current value | "Progress: {{current}}/{{total}}" |
-| `{{total}}` | Total value | "Progress: {{current}}/{{total}}" |
+| Variable         | Description      | Example                           |
+| ---------------- | ---------------- | --------------------------------- |
+| `{{count}}`      | Numeric count    | "You have {{count}} achievements" |
+| `{{points}}`     | Score/points     | "Score: {{points}}"               |
+| `{{seconds}}`    | Time in seconds  | "Time left: {{seconds}}s"         |
+| `{{name}}`       | User/item name   | "Hello, {{name}}!"                |
+| `{{date}}`       | Date/timestamp   | "Earned on {{date}}"              |
+| `{{percentage}}` | Percentage value | "Accuracy: {{percentage}}%"       |
+| `{{current}}`    | Current value    | "Progress: {{current}}/{{total}}" |
+| `{{total}}`      | Total value      | "Progress: {{current}}/{{total}}" |
 
 ### Rules for Variables
 
 1. **Never translate variable names**
+
    ```json
    // ✅ Correct
    "greeting": "Hola, {{name}}!"
-   
+
    // ❌ Wrong
    "greeting": "Hola, {{nombre}}!"
    ```
 
 2. **Keep exact spacing inside braces**
+
    ```json
    // ✅ Correct
    "score": "{{points}} points"
-   
+
    // ❌ Wrong (extra spaces)
    "score": "{{ points }} points"
    ```
 
 3. **Adjust word order for your language**
+
    ```json
    // English: Adjective before noun
    "description": "Your {{count}} correct answers"
-   
+
    // Spanish: Adjective after noun
    "description": "Tus {{count}} respuestas correctas"
    ```
@@ -333,7 +347,7 @@ Examples:
    - Buttons should be concise
    - Tooltips can be more verbose
 
-4. **Respect cultural context**: 
+4. **Respect cultural context**:
    - Japanese honorifics (です/ます forms)
    - Formal vs informal (Spanish tú/usted)
    - Right-to-left languages (Arabic)
@@ -341,20 +355,22 @@ Examples:
 ### Technical Guidelines
 
 1. **Preserve special characters**
+
    ```json
    // ✅ Keep punctuation marks
    "loading": "Loading..."
    "success": "Success!"
-   
+
    // ✅ Keep HTML entities if present
    "copyright": "&copy; 2024 KanaDojo"
    ```
 
 2. **Don't add extra whitespace**
+
    ```json
    // ✅ Correct
    "submit": "Enviar"
-   
+
    // ❌ Wrong (trailing space)
    "submit": "Enviar "
    ```
@@ -380,11 +396,13 @@ npm run i18n:validate
 ```
 
 **Output:**
+
 ```
 ✅ All translations are valid!
 ```
 
 Or if there are errors:
+
 ```
 ❌ ES: Missing 3 keys:
   - kana.game.hint
@@ -433,6 +451,7 @@ npm run i18n:scan
 ### Q: What if a translation key is missing?
 
 The validation script will catch it! Run:
+
 ```bash
 npm run i18n:validate
 ```
@@ -445,6 +464,7 @@ Fix by adding the missing key to your language file.
 **Final version**: No, please review and improve machine translations
 
 Machine translations often:
+
 - Miss cultural context
 - Use wrong formality levels
 - Translate UI terms incorrectly
@@ -452,6 +472,7 @@ Machine translations often:
 ### Q: How do I handle gendered language (Spanish/French)?
 
 Use the most neutral/inclusive option when possible:
+
 - Spanish: Use "todos/todas" → "todas las personas" or "todo el mundo"
 - French: Use inclusive forms when appropriate
 
@@ -460,6 +481,7 @@ If the context requires a specific gender, match the subject.
 ### Q: What if English has a typo or unclear text?
 
 **Don't translate the typo!** Instead:
+
 1. Open a GitHub issue describing the problem
 2. Suggest the correct English text
 3. Wait for the fix, then translate the corrected version
@@ -467,6 +489,7 @@ If the context requires a specific gender, match the subject.
 ### Q: How long does it take?
 
 Approximate time per file:
+
 - `common.json`: 30-45 minutes (54 keys)
 - `navigation.json`: 10-15 minutes (19 keys)
 - `kana.json`: 45-60 minutes (45 keys)
@@ -496,6 +519,7 @@ Approximate time per file:
 ### Translation Credits
 
 All translators will be credited in:
+
 - `README.md` Contributors section
 - In-app credits page (coming soon)
 
@@ -504,8 +528,8 @@ All translators will be credited in:
 ## Need Help?
 
 - **GitHub Issues**: [Report a problem or ask questions](https://github.com/yourusername/kanadojo/issues)
-- **Email**: contact@kanadojo.com
-- **Discord**: [Join our community](https://discord.gg/kanadojo) *(if available)*
+- **Email**: dev@kanadojo.com
+- **Discord**: [Join our community](https://discord.gg/kanadojo) _(if available)_
 
 ---
 

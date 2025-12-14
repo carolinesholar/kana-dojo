@@ -48,7 +48,7 @@ We may update these Terms from time to time. Changes will be posted on this page
 ## 8. Contact Information  
 If you have any questions or concerns about these Terms, contact us at:  
 
-📧 **Email:** lingdojo.dev@gmail.com  
+📧 **Email:** dev@kanadojo.com  
 
 
 **Thank you for using KanaDojo!** 🚀  

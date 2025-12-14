@@ -29,7 +29,7 @@ export const kanaDojoSchema = {
       sameAs: ['https://github.com/lingdojo/kanadojo'],
       contactPoint: {
         '@type': 'ContactPoint',
-        email: 'lingdojo.dev@gmail.com',
+        email: 'dev@kanadojo.com',
         contactType: 'Customer Support'
       }
     },

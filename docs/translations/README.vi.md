@@ -20,6 +20,7 @@
 </div>
 
 <a id="about-kanadojo"></a>
+
 ## 📖 About KanaDojo
 
 KanaDojo is an engaging web-based Japanese learning platform that makes mastering Hiragana, Katakana, Kanji, and Vocabulary fun and intuitive. Built with a focus on aesthetics, customization, and effective learning, KanaDojo provides an immersive training environment for Japanese language learners at all levels.
@@ -65,6 +66,7 @@ Each dojo supports four engaging training modes to reinforce learning:
 - Smooth animations and transitions powered by Framer Motion
 
 <a id="screenshots"></a>
+
 ## 🖼️ Screenshots
 
 <div align="center">
@@ -90,6 +92,7 @@ Each dojo supports four engaging training modes to reinforce learning:
 </div>
 
 <a id="ui-design-philosophy"></a>
+
 ## 🎨 UI & Design Philosophy
 
 KanaDojo embraces a **minimalist aesthetic** combined with **maximum flexibility**. The design philosophy centers around:
@@ -123,6 +126,7 @@ KanaDojo embraces a **minimalist aesthetic** combined with **maximum flexibility
 - Font previews with real Japanese text samples
 
 <a id="tech-stack"></a>
+
 ## 🛠️ Tech Stack
 
 KanaDojo is built with modern web technologies for optimal performance and developer experience:
@@ -166,6 +170,7 @@ KanaDojo is built with modern web technologies for optimal performance and devel
 - **[@vercel/speed-insights](https://vercel.com/docs/speed-insights)** - Performance monitoring
 
 <a id="getting-started"></a>
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -224,18 +229,21 @@ If you encounter issues during development, try these solutions:
 #### Clear Next.js Cache
 
 **macOS/Linux:**
+
 ```bash
 rm -rf .next
 npm run dev
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force .next
 npm run dev
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q .next
 npm run dev
@@ -244,18 +252,21 @@ npm run dev
 #### Clear Node Modules and Reinstall
 
 **macOS/Linux:**
+
 ```bash
 rm -rf node_modules package-lock.json
 npm install
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force node_modules, package-lock.json
 npm install
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q node_modules
 del package-lock.json
@@ -265,6 +276,7 @@ npm install
 #### Clear All Caches (Nuclear Option)
 
 **macOS/Linux:**
+
 ```bash
 rm -rf .next node_modules package-lock.json
 npm cache clean --force
@@ -273,6 +285,7 @@ npm run dev
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force .next, node_modules, package-lock.json
 npm cache clean --force
@@ -281,6 +294,7 @@ npm run dev
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q .next
 rmdir /s /q node_modules
@@ -295,6 +309,7 @@ npm run dev
 If port 3000 is already in use:
 
 **macOS/Linux:**
+
 ```bash
 # Find process using port 3000
 lsof -i :3000
@@ -304,6 +319,7 @@ kill -9 PID
 ```
 
 **Windows (PowerShell/Command Prompt):**
+
 ```cmd
 # Find process using port 3000
 netstat -ano | findstr :3000
@@ -313,12 +329,14 @@ taskkill /PID PID /F
 ```
 
 Or simply run on a different port:
+
 ```bash
 # macOS/Linux/Windows
 PORT=3001 npm run dev
 ```
 
 <a id="project-structure"></a>
+
 ## 📁 Project Structure
 
 ```
@@ -378,10 +396,12 @@ kanadojo/
 │   ├── sounds/                 # Audio files
 │   └── wallpapers/             # Background images
 ```
-├── CLAUDE.md                     # Developer documentation
-├── next.config.ts                # Next.js configuration
-├── tailwind.config.js            # Tailwind CSS configuration
-└── tsconfig.json                 # TypeScript configuration
+
+├── CLAUDE.md # Developer documentation
+├── next.config.ts # Next.js configuration
+├── tailwind.config.js # Tailwind CSS configuration
+└── tsconfig.json # TypeScript configuration
+
 ```
 
 ### Key Concepts
@@ -456,7 +476,7 @@ This project is licensed under the AGPL 3.0 License - see the [LICENSE.md](LICEN
 
 - **Website**: [kanadojo.com](https://kanadojo.com)
 - **Repository**: [github.com/lingdojo/kanadojo](https://github.com/lingdojo/kanadojo)
-- **Email**: lingdojo.dev@gmail.com
+- **Email**: dev@kanadojo.com
 
 ---
 
@@ -469,3 +489,4 @@ This project is licensed under the AGPL 3.0 License - see the [LICENSE.md](LICEN
 [⬆ Back to top](#top)
 
 </div>
+```

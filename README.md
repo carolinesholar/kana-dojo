@@ -17,14 +17,16 @@
 
 </details>
 
-<a href="#about-kanadojo">About KanaDojo</a> | <a href="#screenshots">Screenshots</a> | <a href="#ui-design-philosophy">UI &amp; Design Philosophy</a> | <a href="#tech-stack">Tech Stack</a> | <a href="#getting-started">Getting Started</a> | <a href="#project-structure">Project Structure</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a> | <a href="#acknowledgments">Acknowledgments</a> | <a href="#contact-links">Contact &amp; Links</a> 
+<a href="#about-kanadojo">About KanaDojo</a> | <a href="#screenshots">Screenshots</a> | <a href="#ui-design-philosophy">UI &amp; Design Philosophy</a> | <a href="#tech-stack">Tech Stack</a> | <a href="#getting-started">Getting Started</a> | <a href="#project-structure">Project Structure</a> | <a href="#contributing">Contributing</a> | <a href="#license">License</a> | <a href="#acknowledgments">Acknowledgments</a> | <a href="#contact-links">Contact &amp; Links</a>
 
 # KanaDojo かな道場
 
 <div align="center">
 
 ![KanaDojo Banner](https://github.com/user-attachments/assets/b7931764-be5e-43c7-b1b3-9d2568b2fecf)
+
 ## Star History
+
 [![Star History Chart](https://api.star-history.com/svg?repos=lingdojo/kana-dojo&type=date&legend=top-left)](https://www.star-history.com/#lingdojo/kana-dojo&type=date&legend=top-left)
 
 **An aesthetic, minimalist and highly customizable platform for mastering Japanese inspired by Monkeytype**
@@ -39,6 +41,7 @@
 </div>
 
 <a id="about-kanadojo"></a>
+
 ## 📖 About KanaDojo
 
 KanaDojo is an engaging web-based Japanese learning platform that makes mastering Hiragana, Katakana, Kanji, and Vocabulary fun and intuitive. Built with a focus on aesthetics, customization, and effective learning, KanaDojo provides an immersive training environment for Japanese language learners at all levels.
@@ -84,6 +87,7 @@ Each dojo supports four engaging training modes to reinforce learning:
 - Smooth animations and transitions powered by Framer Motion
 
 <a id="screenshots"></a>
+
 ## 🖼️ Screenshots
 
 <div align="center">
@@ -109,6 +113,7 @@ Each dojo supports four engaging training modes to reinforce learning:
 </div>
 
 <a id="ui-design-philosophy"></a>
+
 ## 🎨 UI & Design Philosophy
 
 KanaDojo embraces a **minimalist aesthetic** combined with **maximum flexibility**. The design philosophy centers around:
@@ -142,6 +147,7 @@ KanaDojo embraces a **minimalist aesthetic** combined with **maximum flexibility
 - Font previews with real Japanese text samples
 
 <a id="tech-stack"></a>
+
 ## 🛠️ Tech Stack
 
 KanaDojo is built with modern web technologies for optimal performance and developer experience:
@@ -185,6 +191,7 @@ KanaDojo is built with modern web technologies for optimal performance and devel
 - **[@vercel/speed-insights](https://vercel.com/docs/speed-insights)** - Performance monitoring
 
 <a id="architecture"></a>
+
 ## 🏗️ Architecture
 
 KanaDojo follows a **feature-based architecture** that organizes code by functionality rather than by file type. This modular approach improves maintainability, scalability, and developer experience.
@@ -199,6 +206,7 @@ KanaDojo follows a **feature-based architecture** that organizes code by functio
 Each feature contains its own components, stores, data, types, and business logic, enabling independent development and easier code understanding. For detailed architecture information, see [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md).
 
 <a id="getting-started"></a>
+
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -259,18 +267,21 @@ If you encounter issues during development, try these solutions:
 #### Clear Next.js Cache
 
 **macOS/Linux:**
+
 ```bash
 rm -rf .next
 npm run dev
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force .next
 npm run dev
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q .next
 npm run dev
@@ -279,18 +290,21 @@ npm run dev
 #### Clear Node Modules and Reinstall
 
 **macOS/Linux:**
+
 ```bash
 rm -rf node_modules package-lock.json
 npm install
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force node_modules, package-lock.json
 npm install
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q node_modules
 del package-lock.json
@@ -300,6 +314,7 @@ npm install
 #### Clear All Caches (Nuclear Option)
 
 **macOS/Linux:**
+
 ```bash
 rm -rf .next node_modules package-lock.json
 npm cache clean --force
@@ -308,6 +323,7 @@ npm run dev
 ```
 
 **Windows (PowerShell):**
+
 ```powershell
 Remove-Item -Recurse -Force .next, node_modules, package-lock.json
 npm cache clean --force
@@ -316,6 +332,7 @@ npm run dev
 ```
 
 **Windows (Command Prompt):**
+
 ```cmd
 rmdir /s /q .next
 rmdir /s /q node_modules
@@ -330,6 +347,7 @@ npm run dev
 If port 3000 is already in use:
 
 **macOS/Linux:**
+
 ```bash
 # Find process using port 3000
 lsof -i :3000
@@ -339,6 +357,7 @@ kill -9 PID
 ```
 
 **Windows (PowerShell/Command Prompt):**
+
 ```cmd
 # Find process using port 3000
 netstat -ano | findstr :3000
@@ -348,12 +367,14 @@ taskkill /PID PID /F
 ```
 
 Or simply run on a different port:
+
 ```bash
 # macOS/Linux/Windows
 PORT=3001 npm run dev
 ```
 
 <a id="project-structure"></a>
+
 ## 📁 Project Structure
 
 ```
@@ -462,6 +483,7 @@ Each game mode is a dynamic route (`/[contentType]/train/[gameMode]`) that:
 4. Tracks statistics (correct, incorrect, streak)
 
 <a id="contributing"></a>
+
 ## 🤝 Contributing
 
 Contributions are welcome! KanaDojo is an open-source project built by the community, for the community. Check out [CONTRIBUTING.md](CONTRIBUTING.md) for more detailed information on how to contribute.
@@ -481,18 +503,21 @@ We're actively working on making KanaDojo available in multiple languages! If yo
 #### 📊 i18n System Status
 
 **Infrastructure**: ✅ Complete (100%)
+
 - Namespace-based translation system using next-intl
 - 9 namespaces organized by feature: `common`, `navigation`, `kana`, `kanji`, `vocabulary`, `achievements`, `statistics`, `settings`, `errors`
 - Automated validation and TypeScript type generation
 - 345 translation keys across 3 languages
 
 **Translation Progress**: 🚧 In Progress (~43%)
+
 - ✅ Base UI elements translated (buttons, messages, navigation)
 - ✅ Core feature metadata (kana, kanji, vocabulary pages)
 - 🚧 Remaining: ~464 UI strings to add
 - 🚧 Component migration: 2/90 files using translations
 
 **How It Works**:
+
 ```tsx
 // Components use the useTranslations hook
 import { useTranslations } from 'next-intl';
@@ -504,6 +529,7 @@ function MyComponent() {
 ```
 
 **Translation Files Structure**:
+
 ```
 core/i18n/locales/
 ├── en/  # English (reference language)
@@ -521,11 +547,13 @@ core/i18n/locales/
 ```
 
 **Available Commands**:
+
 - `npm run i18n:validate` - Verify all translation keys match across languages
 - `npm run i18n:generate-types` - Generate TypeScript autocomplete
 - `npm run i18n:check` - Run both validation and type generation
 
 **What's Next**:
+
 1. Add remaining ~464 UI strings to namespace files
 2. Migrate 88 remaining components to use translation hooks
 3. Expand to 8+ additional languages
@@ -548,11 +576,13 @@ core/i18n/locales/
 - Keep components focused and reusable
 
 <a id="license"></a>
+
 ## 📄 License
 
 This project is licensed under the AGPL 3.0 License - see the [LICENSE.md](LICENSE.md) file for details.
 
 <a id="acknowledgments"></a>
+
 ## 🙏 Acknowledgments
 
 - Japanese language data and character information
@@ -560,11 +590,12 @@ This project is licensed under the AGPL 3.0 License - see the [LICENSE.md](LICEN
 - All contributors who help make KanaDojo better
 
 <a id="contact-links"></a>
+
 ## 📞 Contact & Links
 
 - **Website**: [kanadojo.com](https://kanadojo.com)
 - **Repository**: [github.com/lingdojo/kanadojo](https://github.com/lingdojo/kanadojo)
-- **Email**: lingdojo.dev@gmail.com
+- **Email**: dev@kanadojo.com
 
 ---
 
