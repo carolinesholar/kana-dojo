@@ -18,7 +18,7 @@ export default function EmptyState({ dojoType, dojoLabel }: EmptyStateProps) {
           Blitz
         </h1>
         <p className='text-[var(--muted-color)]'>
-          Please select some {dojoLabel.toLowerCase()} first to begin the timed
+          Please select some {dojoLabel.toLowerCase()} first to begin the
           challenge.
         </p>
         <Link href={`/${dojoType}`}>

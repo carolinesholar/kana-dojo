@@ -212,16 +212,13 @@ KanaDojo uses Next.js App Router with internationalized routes.
 /                           # Home page (main menu)
 /kana                       # Kana selection menu
 /kana/train/[gameMode]      # Kana training (pick, reverse-pick, input, reverse-input)
-/kana/timed-challenge       # Timed kana challenge
 /kana/blitz                 # Kana blitz mode
 /kana/[subset]              # Kana subset dictionary
 /kanji                      # Kanji selection menu
 /kanji/train/[gameMode]     # Kanji training
-/kanji/timed-challenge      # Timed kanji challenge
 /kanji/blitz                # Kanji blitz mode
 /vocabulary                 # Vocabulary selection menu
 /vocabulary/train/[gameMode] # Vocabulary training
-/vocabulary/timed-challenge # Timed vocabulary challenge
 /vocabulary/blitz           # Vocabulary blitz mode
 /achievements               # Achievements page
 /progress                   # Progress tracking

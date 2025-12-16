@@ -2,17 +2,15 @@
 
 import React from 'react';
 import useKanjiStore, {
-  type IKanjiObj,
+  type IKanjiObj
 } from '@/features/Kanji/store/useKanjiStore';
 import useStatsStore from '@/features/Progress/store/useStatsStore';
-import TimedChallenge, {
-  type TimedChallengeConfig,
-} from '@/shared/components/TimedChallenge';
+import Blitz, { type BlitzConfig } from '@/shared/components/Blitz';
 import { Random } from 'random-js';
 
 const random = new Random();
 
-export default function TimedChallengeKanji() {
+export default function BlitzKanji() {
   const selectedKanjiObjs = useKanjiStore(state => state.selectedKanjiObjs);
   const selectedKanjiSets = useKanjiStore(state => state.selectedKanjiSets);
   const selectedGameModeKanji = useKanjiStore(
@@ -26,14 +24,14 @@ export default function TimedChallengeKanji() {
     timedKanjiBestStreak,
     incrementTimedKanjiCorrectAnswers,
     incrementTimedKanjiWrongAnswers,
-    resetTimedKanjiStats,
+    resetTimedKanjiStats
   } = useStatsStore();
 
-  const config: TimedChallengeConfig<IKanjiObj> = {
+  const config: BlitzConfig<IKanjiObj> = {
     dojoType: 'kanji',
     dojoLabel: 'Kanji',
-    localStorageKey: 'timedKanjiChallengeDuration',
-    goalTimerContext: 'Kanji Timed Challenge',
+    localStorageKey: 'blitzKanjiDuration',
+    goalTimerContext: 'Kanji Blitz',
     initialGameMode: selectedGameModeKanji === 'Type' ? 'Type' : 'Pick',
     items: selectedKanjiObjs,
     selectedSets: selectedKanjiSets,
@@ -87,9 +85,9 @@ export default function TimedChallengeKanji() {
       bestStreak: timedKanjiBestStreak,
       incrementCorrect: incrementTimedKanjiCorrectAnswers,
       incrementWrong: incrementTimedKanjiWrongAnswers,
-      reset: resetTimedKanjiStats,
-    },
+      reset: resetTimedKanjiStats
+    }
   };
 
-  return <TimedChallenge config={config} />;
+  return <Blitz config={config} />;
 }

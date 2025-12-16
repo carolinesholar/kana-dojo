@@ -71,7 +71,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
     };
   }, [hotkeysOn, isFilled]);
 
-  const showTimedChallenge =
+  const showBlitz =
     currentDojo === 'kana' ||
     currentDojo === 'vocabulary' ||
     currentDojo === 'kanji';
@@ -198,7 +198,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
               )}
             >
               {/* Blitz Button */}
-              {showTimedChallenge && (
+              {showBlitz && (
                 <button
                   className={clsx(
                     'flex-1 max-w-sm h-12 px-2 sm:px-6 flex flex-row justify-center items-center gap-2',

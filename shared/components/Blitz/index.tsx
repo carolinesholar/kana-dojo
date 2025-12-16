@@ -13,16 +13,16 @@ import EmptyState from './EmptyState';
 import PreGameScreen from './PreGameScreen';
 import ActiveGame from './ActiveGame';
 import ResultsScreen from './ResultsScreen';
-import type { BlitzGameMode, TimedChallengeConfig } from './types';
+import type { BlitzGameMode, BlitzConfig } from './types';
 
 // Re-export types for external use
-export type { BlitzGameMode, TimedChallengeConfig } from './types';
+export type { BlitzGameMode, BlitzConfig } from './types';
 
-interface TimedChallengeProps<T> {
-  config: TimedChallengeConfig<T>;
+interface BlitzProps<T> {
+  config: BlitzConfig<T>;
 }
 
-export default function TimedChallenge<T>({ config }: TimedChallengeProps<T>) {
+export default function Blitz<T>({ config }: BlitzProps<T>) {
   const router = useRouter();
   const pathname = usePathname();
   const isBlitzRoute = pathname?.includes('/blitz') ?? false;

@@ -5,12 +5,10 @@ import useVocabStore, {
   type IVocabObj
 } from '@/features/Vocabulary/store/useVocabStore';
 import useStatsStore from '@/features/Progress/store/useStatsStore';
-import TimedChallenge, {
-  type TimedChallengeConfig
-} from '@/shared/components/TimedChallenge';
+import Blitz, { type BlitzConfig } from '@/shared/components/Blitz';
 import FuriganaText from '@/shared/components/text/FuriganaText';
 
-export default function TimedChallengeVocab() {
+export default function BlitzVocab() {
   const selectedVocabObjs = useVocabStore(state => state.selectedVocabObjs);
   const selectedVocabSets = useVocabStore(state => state.selectedVocabSets);
   const selectedGameModeVocab = useVocabStore(
@@ -27,11 +25,11 @@ export default function TimedChallengeVocab() {
     resetTimedVocabStats
   } = useStatsStore();
 
-  const config: TimedChallengeConfig<IVocabObj> = {
+  const config: BlitzConfig<IVocabObj> = {
     dojoType: 'vocabulary',
     dojoLabel: 'Vocabulary',
-    localStorageKey: 'timedVocabChallengeDuration',
-    goalTimerContext: 'Vocabulary Timed Challenge',
+    localStorageKey: 'blitzVocabDuration',
+    goalTimerContext: 'Vocabulary Blitz',
     initialGameMode: selectedGameModeVocab === 'Type' ? 'Type' : 'Pick',
     items: selectedVocabObjs,
     selectedSets: selectedVocabSets,
@@ -93,5 +91,5 @@ export default function TimedChallengeVocab() {
     }
   };
 
-  return <TimedChallenge config={config} />;
+  return <Blitz config={config} />;
 }

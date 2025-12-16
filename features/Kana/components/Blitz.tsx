@@ -7,11 +7,9 @@ import { generateKanaQuestion } from '@/features/Kana/lib/generateKanaQuestions'
 import type { KanaCharacter } from '@/features/Kana/lib/generateKanaQuestions';
 import { flattenKanaGroups } from '@/features/Kana/lib/flattenKanaGroup';
 import { kana } from '@/features/Kana/data/kana';
-import TimedChallenge, {
-  type TimedChallengeConfig
-} from '@/shared/components/TimedChallenge';
+import Blitz, { type BlitzConfig } from '@/shared/components/Blitz';
 
-export default function TimedChallengeKana() {
+export default function BlitzKana() {
   const kanaGroupIndices = useKanaStore(state => state.kanaGroupIndices);
   const selectedGameModeKana = useKanaStore(
     state => state.selectedGameModeKana
@@ -122,11 +120,11 @@ export default function TimedChallengeKana() {
     resetTimedStats
   } = useStatsStore();
 
-  const config: TimedChallengeConfig<KanaCharacter> = {
+  const config: BlitzConfig<KanaCharacter> = {
     dojoType: 'kana',
     dojoLabel: 'Kana',
-    localStorageKey: 'timedChallengeDuration',
-    goalTimerContext: 'Kana Timed Challenge',
+    localStorageKey: 'blitzDuration',
+    goalTimerContext: 'Kana Blitz',
     initialGameMode: selectedGameModeKana === 'Type' ? 'Type' : 'Pick',
     items: selectedKana,
     selectedSets: selectedKanaGroups,
@@ -182,5 +180,5 @@ export default function TimedChallengeKana() {
     }
   };
 
-  return <TimedChallenge config={config} />;
+  return <Blitz config={config} />;
 }

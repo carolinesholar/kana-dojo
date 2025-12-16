@@ -2,7 +2,7 @@ import React from 'react';
 
 export type BlitzGameMode = 'Pick' | 'Type';
 
-export interface TimedChallengeConfig<T> {
+export interface BlitzConfig<T> {
   // Identity
   dojoType: 'kana' | 'kanji' | 'vocabulary';
   dojoLabel: string;

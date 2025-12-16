@@ -36,10 +36,10 @@ const GameModes = ({
 
   const durationStorageKey =
     currentDojo === 'kana'
-      ? 'timedChallengeDuration'
+      ? 'blitzDuration'
       : currentDojo === 'kanji'
-        ? 'timedKanjiChallengeDuration'
-        : 'timedVocabChallengeDuration';
+        ? 'blitzKanjiDuration'
+        : 'blitzVocabDuration';
 
   const DURATION_OPTIONS = [30, 60, 90, 120, 180];
 
@@ -268,16 +268,16 @@ const GameModes = ({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-[70] bg-[var(--background-color)]">
-      <div className="min-h-[100dvh] flex flex-col items-center justify-center p-4">
-        <div className="max-w-lg w-full space-y-4">
+    <div className='fixed inset-0 z-[70] bg-[var(--background-color)]'>
+      <div className='min-h-[100dvh] flex flex-col items-center justify-center p-4'>
+        <div className='max-w-lg w-full space-y-4'>
           {/* Header */}
-          <div className="text-center space-y-3">
-            <Play size={56} className="mx-auto text-[var(--main-color)]" />
-            <h1 className="text-2xl font-bold text-[var(--secondary-color)]">
+          <div className='text-center space-y-3'>
+            <Play size={56} className='mx-auto text-[var(--main-color)]' />
+            <h1 className='text-2xl font-bold text-[var(--secondary-color)]'>
               {dojoLabel} {mode === 'blitz' ? 'Blitz' : 'Training'}
             </h1>
-            <p className="text-[var(--muted-color)]">
+            <p className='text-[var(--muted-color)]'>
               Choose your training mode
             </p>
           </div>
@@ -292,7 +292,7 @@ const GameModes = ({
           />
 
           {/* Game Mode Cards */}
-          <div className="space-y-3">
+          <div className='space-y-3'>
             {gameModes.map(mode => {
               const isSelected = mode.id === selectedGameMode;
               const Icon = mode.icon;
@@ -325,7 +325,7 @@ const GameModes = ({
                   </div>
 
                   {/* Content */}
-                  <div className="flex-1 min-w-0">
+                  <div className='flex-1 min-w-0'>
                     <h3
                       className={clsx(
                         'text-lg font-medium',
@@ -334,7 +334,7 @@ const GameModes = ({
                     >
                       {mode.title}
                     </h3>
-                    <p className="text-sm text-[var(--secondary-color)] mt-0.5">
+                    <p className='text-sm text-[var(--secondary-color)] mt-0.5'>
                       {mode.description}
                     </p>
                   </div>
@@ -350,16 +350,16 @@ const GameModes = ({
                   >
                     {isSelected && (
                       <svg
-                        className="w-3 h-3 text-[var(--background-color)]"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
+                        className='w-3 h-3 text-[var(--background-color)]'
+                        fill='none'
+                        viewBox='0 0 24 24'
+                        stroke='currentColor'
                       >
                         <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
+                          strokeLinecap='round'
+                          strokeLinejoin='round'
                           strokeWidth={3}
-                          d="M5 13l4 4L19 7"
+                          d='M5 13l4 4L19 7'
                         />
                       </svg>
                     )}
@@ -370,11 +370,11 @@ const GameModes = ({
           </div>
 
           {mode === 'blitz' && (
-            <div className="bg-[var(--card-color)] rounded-lg p-4 space-y-3">
-              <p className="text-sm font-medium text-[var(--secondary-color)]">
+            <div className='bg-[var(--card-color)] rounded-lg p-4 space-y-3'>
+              <p className='text-sm font-medium text-[var(--secondary-color)]'>
                 Duration:
               </p>
-              <div className="flex gap-2 justify-center flex-wrap">
+              <div className='flex gap-2 justify-center flex-wrap'>
                 {DURATION_OPTIONS.map(duration => (
                   <ActionButton
                     key={duration}
@@ -390,7 +390,7 @@ const GameModes = ({
                       challengeDuration === duration ? 'main' : 'secondary'
                     }
                     borderBottomThickness={6}
-                    borderRadius="2xl"
+                    borderRadius='2xl'
                     className={clsx(
                       'px-4 py-2 w-auto ',
                       challengeDuration !== duration && 'opacity-60'
@@ -404,7 +404,7 @@ const GameModes = ({
           )}
 
           {/* Action Buttons */}
-          <div className="flex flex-row items-center justify-center gap-2 md:gap-4 w-full max-w-4xl mx-auto">
+          <div className='flex flex-row items-center justify-center gap-2 md:gap-4 w-full max-w-4xl mx-auto'>
             <button
               className={clsx(
                 'w-1/2 h-12 px-2 sm:px-6 flex flex-row justify-center items-center gap-2',
@@ -419,7 +419,7 @@ const GameModes = ({
               }}
             >
               <ArrowLeft size={20} />
-              <span className="whitespace-nowrap">Back</span>
+              <span className='whitespace-nowrap'>Back</span>
             </button>
 
             {/* Start Button */}
@@ -429,7 +429,7 @@ const GameModes = ({
                   ? `/${currentDojo}/blitz`
                   : `/${currentDojo}/train`
               }
-              className="w-1/2"
+              className='w-1/2'
               onClick={e => {
                 if (!selectedGameMode) {
                   e.preventDefault();
@@ -453,7 +453,7 @@ const GameModes = ({
                     : 'bg-[var(--card-color)] text-[var(--border-color)] cursor-not-allowed'
                 )}
               >
-                <span className="whitespace-nowrap">
+                <span className='whitespace-nowrap'>
                   {mode === 'blitz' ? 'Start Blitz' : 'Start Training'}
                 </span>
                 <Play
@@ -509,21 +509,21 @@ function SelectedLevelsCard({
   };
 
   return (
-    <div className="bg-[var(--card-color)] rounded-lg p-4">
-      <div className="flex flex-col gap-2">
-        <div className="flex flex-row items-center gap-2">
+    <div className='bg-[var(--card-color)] rounded-lg p-4'>
+      <div className='flex flex-col gap-2'>
+        <div className='flex flex-row items-center gap-2'>
           <CheckCircle2
-            className="text-[var(--secondary-color)] shrink-0"
+            className='text-[var(--secondary-color)] shrink-0'
             size={20}
           />
-          <span className="text-sm">
+          <span className='text-sm'>
             {isKana ? 'Selected Groups:' : 'Selected Levels:'}
           </span>
         </div>
-        <span className="text-[var(--secondary-color)] text-sm break-words md:hidden">
+        <span className='text-[var(--secondary-color)] text-sm break-words md:hidden'>
           {formatCompact()}
         </span>
-        <span className="text-[var(--secondary-color)] text-sm break-words hidden md:inline">
+        <span className='text-[var(--secondary-color)] text-sm break-words hidden md:inline'>
           {formatFull()}
         </span>
       </div>
