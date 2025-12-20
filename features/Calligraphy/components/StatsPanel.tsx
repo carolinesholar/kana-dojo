@@ -3,9 +3,13 @@ import useCalligraphyStore from '@/features/Calligraphy/store/useCalligraphyStor
 
 interface StatsPanelProps {
   layout?: 'horizontal' | 'vertical';
+  compact?: boolean;
 }
 
-const StatsPanel = ({ layout = 'vertical' }: StatsPanelProps) => {
+const StatsPanel = ({
+  layout = 'vertical',
+  compact = false
+}: StatsPanelProps) => {
   const correctStrokes = useCalligraphyStore(state => state.correctStrokes);
   const missedStrokes = useCalligraphyStore(state => state.missedStrokes);
   const completedCharacters = useCalligraphyStore(
@@ -53,34 +57,52 @@ const StatsPanel = ({ layout = 'vertical' }: StatsPanelProps) => {
   }
 
   return (
-    <div className='space-y-2'>
-      <div className='text-xs text-[var(--secondary-color)] mb-2'>
-        Session Stats
-      </div>
+    <div className={compact ? 'space-y-1.5' : 'space-y-2'}>
+      {!compact && (
+        <div className='text-xs text-[var(--secondary-color)] mb-2'>
+          Session Stats
+        </div>
+      )}
 
-      <div className='p-2.5 rounded-lg bg-[var(--background-color)] border border-[var(--border-color)]'>
+      <div
+        className={`rounded-lg bg-[var(--background-color)] border border-[var(--border-color)] ${compact ? 'p-2 flex justify-between items-center' : 'p-2.5'}`}
+      >
         <div className='text-xs text-[var(--secondary-color)]'>Correct</div>
-        <div className='text-lg text-green-500 font-medium'>
+        <div
+          className={`text-green-500 font-medium ${compact ? 'text-base' : 'text-lg'}`}
+        >
           {correctStrokes}
         </div>
       </div>
 
-      <div className='p-2.5 rounded-lg bg-[var(--background-color)] border border-[var(--border-color)]'>
+      <div
+        className={`rounded-lg bg-[var(--background-color)] border border-[var(--border-color)] ${compact ? 'p-2 flex justify-between items-center' : 'p-2.5'}`}
+      >
         <div className='text-xs text-[var(--secondary-color)]'>Missed</div>
-        <div className='text-lg text-red-500 font-medium'>{missedStrokes}</div>
+        <div
+          className={`text-red-500 font-medium ${compact ? 'text-base' : 'text-lg'}`}
+        >
+          {missedStrokes}
+        </div>
       </div>
 
-      <div className='p-2.5 rounded-lg bg-[var(--background-color)] border border-[var(--border-color)]'>
+      <div
+        className={`rounded-lg bg-[var(--background-color)] border border-[var(--border-color)] ${compact ? 'p-2 flex justify-between items-center' : 'p-2.5'}`}
+      >
         <div className='text-xs text-[var(--secondary-color)]'>Completed</div>
-        <div className='text-lg text-[var(--main-color)] font-medium'>
+        <div
+          className={`text-[var(--main-color)] font-medium ${compact ? 'text-base' : 'text-lg'}`}
+        >
           {completedCharacters.length}/{totalCharacters}
         </div>
       </div>
 
-      <div className='p-2.5 rounded-lg bg-[var(--background-color)] border border-[var(--border-color)]'>
+      <div
+        className={`rounded-lg bg-[var(--background-color)] border border-[var(--border-color)] ${compact ? 'p-2 flex justify-between items-center' : 'p-2.5'}`}
+      >
         <div className='text-xs text-[var(--secondary-color)]'>Accuracy</div>
         <div
-          className={`text-lg font-medium ${accuracy >= 80 ? 'text-green-500' : 'text-[var(--main-color)]'}`}
+          className={`font-medium ${accuracy >= 80 ? 'text-green-500' : 'text-[var(--main-color)]'} ${compact ? 'text-base' : 'text-lg'}`}
         >
           {accuracy}%
         </div>

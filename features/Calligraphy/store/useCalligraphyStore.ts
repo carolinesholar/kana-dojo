@@ -84,6 +84,10 @@ interface ICalligraphyState {
   // Canvas state
   isDrawing: boolean;
   setIsDrawing: (drawing: boolean) => void;
+
+  // Active step for vertical bar navigation (0 = default, 1 = character, 2 = brush, 3 = practice)
+  activeStep: number;
+  setActiveStep: (step: number) => void;
 }
 
 const useCalligraphyStore = create<ICalligraphyState>(set => ({
@@ -159,7 +163,11 @@ const useCalligraphyStore = create<ICalligraphyState>(set => ({
 
   // Canvas
   isDrawing: false,
-  setIsDrawing: drawing => set({ isDrawing: drawing })
+  setIsDrawing: drawing => set({ isDrawing: drawing }),
+
+  // Active step for vertical bar navigation
+  activeStep: 0,
+  setActiveStep: step => set({ activeStep: step })
 }));
 
 export default useCalligraphyStore;
