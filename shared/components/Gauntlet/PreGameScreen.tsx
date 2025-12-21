@@ -2,7 +2,8 @@
 
 import { useState, useCallback } from 'react';
 import clsx from 'clsx';
-import { Link } from '@/core/i18n/routing';
+import { Link, useRouter } from '@/core/i18n/routing';
+import { usePathname } from 'next/navigation';
 import {
   Swords,
   ArrowLeft,
@@ -59,7 +60,12 @@ export default function PreGameScreen({
   onStart
 }: PreGameScreenProps) {
   const { playClick } = useClick();
+  const router = useRouter();
+  const pathname = usePathname();
   const [showAdvanced, setShowAdvanced] = useState(false);
+
+  // Check if we're on the gauntlet route
+  const isGauntletRoute = pathname?.includes('/gauntlet') ?? false;
 
   const totalQuestions = itemsCount * repetitions;
   const estimatedMinutes = Math.ceil((totalQuestions * 3) / 60);
@@ -312,22 +318,41 @@ export default function PreGameScreen({
               </button>
             </Link>
 
-            <button
-              onClick={() => {
-                playClick();
-                onStart();
-              }}
-              className={clsx(
-                'flex h-12 w-1/2 flex-row items-center justify-center gap-2 px-2 sm:px-6',
-                'rounded-2xl transition-colors duration-200',
-                'border-b-6 font-medium shadow-sm',
-                'hover:cursor-pointer',
-                'border-[var(--main-color-accent)] bg-[var(--main-color)] text-[var(--background-color)]'
-              )}
-            >
-              <span className='whitespace-nowrap'>Start Gauntlet</span>
-              <Play className='fill-current' size={20} />
-            </button>
+            {/* Start button: Navigate to route if not already there, otherwise start game */}
+            {!isGauntletRoute ? (
+              <Link href={`/${dojoType}/gauntlet`} className='w-1/2'>
+                <button
+                  onClick={() => playClick()}
+                  className={clsx(
+                    'flex h-12 w-full flex-row items-center justify-center gap-2 px-2 sm:px-6',
+                    'rounded-2xl transition-colors duration-200',
+                    'border-b-6 font-medium shadow-sm',
+                    'hover:cursor-pointer',
+                    'border-[var(--main-color-accent)] bg-[var(--main-color)] text-[var(--background-color)]'
+                  )}
+                >
+                  <span className='whitespace-nowrap'>Start Gauntlet</span>
+                  <Play className='fill-current' size={20} />
+                </button>
+              </Link>
+            ) : (
+              <button
+                onClick={() => {
+                  playClick();
+                  onStart();
+                }}
+                className={clsx(
+                  'flex h-12 w-1/2 flex-row items-center justify-center gap-2 px-2 sm:px-6',
+                  'rounded-2xl transition-colors duration-200',
+                  'border-b-6 font-medium shadow-sm',
+                  'hover:cursor-pointer',
+                  'border-[var(--main-color-accent)] bg-[var(--main-color)] text-[var(--background-color)]'
+                )}
+              >
+                <span className='whitespace-nowrap'>Start Gauntlet</span>
+                <Play className='fill-current' size={20} />
+              </button>
+            )}
           </div>
         </div>
       </div>

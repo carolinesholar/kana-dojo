@@ -164,6 +164,9 @@ export default function Gauntlet<T>({ config }: GauntletProps<T>) {
   const totalQuestions = items.length * repetitions;
   const currentQuestion = questionQueue[currentIndex] || null;
 
+  // Auto-start state (effect comes after handleStart is defined)
+  const [hasAutoStarted, setHasAutoStarted] = useState(false);
+
   // Timer effect
   useEffect(() => {
     if (phase !== 'playing' || startTime === 0) return;
@@ -505,6 +508,17 @@ export default function Gauntlet<T>({ config }: GauntletProps<T>) {
       setPhase('pregame');
     }
   }, [playClick, isGauntletRoute, router, dojoType]);
+
+  // Auto-start when accessed via route (like Blitz)
+  useEffect(() => {
+    if (!isGauntletRoute) return;
+    if (hasAutoStarted) return;
+    if (phase !== 'pregame') return;
+    if (items.length === 0) return;
+
+    setHasAutoStarted(true);
+    handleStart();
+  }, [isGauntletRoute, hasAutoStarted, phase, items.length, handleStart]);
 
   // Render states
   if (items.length === 0) {

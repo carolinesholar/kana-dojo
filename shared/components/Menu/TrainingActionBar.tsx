@@ -9,7 +9,9 @@ import { useClick } from '@/shared/hooks/useAudio';
 import { Play, Zap, Swords } from 'lucide-react';
 import { AnimatePresence, motion } from 'framer-motion';
 import GameModes from '@/shared/components/Menu/GameModes';
-import { Link } from '@/core/i18n/routing';
+import GauntletKana from '@/features/Kana/components/Gauntlet';
+import GauntletKanji from '@/features/Kanji/components/Gauntlet';
+import GauntletVocab from '@/features/Vocabulary/components/Gauntlet';
 
 interface ITopBarProps {
   currentDojo: string;
@@ -27,6 +29,7 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
   const [gameModesMode, setGameModesMode] = useState<
     'train' | 'blitz' | 'gauntlet'
   >('train');
+  const [showGauntletModal, setShowGauntletModal] = useState(false);
 
   // Kana store
   const kanaGroupIndices = useKanaStore(state => state.kanaGroupIndices);
@@ -219,10 +222,9 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                 </button>
               )}
 
-              {/* Gauntlet Button - Direct navigation (has its own setup screen) */}
+              {/* Gauntlet Button */}
               {showBlitz && (
-                <Link
-                  href={`/${currentDojo}/gauntlet`}
+                <button
                   className={clsx(
                     'flex h-12 max-w-sm flex-1 flex-row items-center justify-center gap-2 px-2 sm:px-6',
                     'bg-[var(--secondary-color)] text-[var(--background-color)]',
@@ -230,11 +232,15 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
                     'border-b-8 border-[var(--secondary-color-accent)] shadow-sm',
                     'hover:cursor-pointer'
                   )}
-                  onClick={() => playClick()}
+                  onClick={e => {
+                    e.currentTarget.blur();
+                    playClick();
+                    setShowGauntletModal(true);
+                  }}
                 >
                   <Swords size={20} />
                   <span className='whitespace-nowrap'>Gauntlet</span>
-                </Link>
+                </button>
               )}
 
               {/* Start Training Button - Opens Modal */}
@@ -272,6 +278,15 @@ const TrainingActionBar: React.FC<ITopBarProps> = ({
         currentDojo={currentDojo}
         mode={gameModesMode}
       />
+
+      {/* Gauntlet Modal - shows Gauntlet component without route change */}
+      {showGauntletModal && (
+        <div className='fixed inset-0 z-[80] bg-[var(--background-color)]'>
+          {currentDojo === 'kana' && <GauntletKana />}
+          {currentDojo === 'kanji' && <GauntletKanji />}
+          {currentDojo === 'vocabulary' && <GauntletVocab />}
+        </div>
+      )}
     </>
   );
 };

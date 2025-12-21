@@ -40,7 +40,7 @@ const ProgressWithSidebar = () => {
       <div className={cn('flex justify-center px-2')}>
         <div
           className={cn(
-            'inline-flex flex-wrap justify-center gap-2 rounded-2xl border border-[var(--border-color)] bg-[var(--card-color)] p-2 max-sm:w-full'
+            'inline-flex flex-wrap justify-center gap-2 rounded-2xl border border-[var(--border-color)] bg-[var(--card-color)] p-2 '
           )}
         >
           {viewOptions.map(option => {
