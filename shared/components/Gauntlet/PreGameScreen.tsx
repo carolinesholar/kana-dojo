@@ -107,10 +107,10 @@ export default function PreGameScreen({
           {/* Header */}
           <div className='space-y-3 text-center'>
             <Swords size={56} className='mx-auto text-[var(--main-color)]' />
-            <h1 className='text-2xl font-bold text-[var(--secondary-color)]'>
+            <h1 className='text-2xl font-bold text-[var(--main-color)]'>
               {dojoLabel} Gauntlet
             </h1>
-            <p className='text-[var(--muted-color)]'>
+            <p className='text-[var(--secondary-color)]'>
               Master every character. No random help.
             </p>
           </div>
@@ -118,13 +118,13 @@ export default function PreGameScreen({
           {/* Selected Sets */}
           <div className='rounded-lg bg-[var(--card-color)] p-4'>
             <div className='flex flex-col gap-2'>
-              <span className='text-sm font-medium text-[var(--secondary-color)]'>
+              <span className='text-sm font-medium text-[var(--main-color)]'>
                 Selected:
               </span>
-              <span className='text-sm text-[var(--main-color)]'>
+              <span className='text-sm text-[var(--secondary-color)]'>
                 {selectedSets.length > 0 ? selectedSets.join(', ') : 'None'}
               </span>
-              <span className='text-xs text-[var(--muted-color)]'>
+              <span className='text-xs text-[var(--secondary-color)]'>
                 {itemsCount} characters × {repetitions} = {totalQuestions}{' '}
                 questions (~{estimatedMinutes} min)
               </span>
@@ -139,7 +139,7 @@ export default function PreGameScreen({
             if (useNewDifficultySelector) {
               return (
                 <div className='space-y-3'>
-                  <h3 className='text-sm font-medium text-[var(--secondary-color)]'>
+                  <h3 className='text-sm font-medium text-[var(--main-color)]'>
                     Difficulty
                   </h3>
                   <div className='flex w-full justify-center gap-2 rounded-2xl border-1 border-[var(--border-color)] bg-[var(--card-color)] p-2'>
@@ -157,6 +157,7 @@ export default function PreGameScreen({
                           colorScheme={isSelected ? 'main' : undefined}
                           borderColorScheme={isSelected ? 'main' : undefined}
                           borderBottomThickness={isSelected ? 6 : 0}
+                          borderRadius='2xl'
                           className={clsx(
                             'flex-1 gap-1.5 px-4 py-2.5 text-sm',
                             !isSelected &&
@@ -236,7 +237,7 @@ export default function PreGameScreen({
 
           {/* Game Mode Cards */}
           <div className='space-y-3'>
-            <h3 className='text-sm font-medium text-[var(--secondary-color)]'>
+            <h3 className='text-sm font-medium text-[var(--main-color)]'>
               Mode
             </h3>
             {gameModes.map(mode => {
