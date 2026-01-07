@@ -13,7 +13,7 @@ import { useCorrect, useError, useClick } from '@/shared/hooks/useAudio';
 import { getGlobalAdaptiveSelector } from '@/shared/lib/adaptiveSelection';
 import Stars from '@/shared/components/Game/Stars';
 import { useCrazyModeTrigger } from '@/features/CrazyMode/hooks/useCrazyModeTrigger';
-import useStatsStore from '@/features/Progress/store/useStatsStore';
+import { useStatsStore } from '@/features/Progress';
 import { useShallow } from 'zustand/react/shallow';
 import { useStopwatch } from 'react-timer-hook';
 import { useSmartReverseMode } from '@/shared/hooks/useSmartReverseMode';
