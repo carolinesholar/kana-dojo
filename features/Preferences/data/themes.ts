@@ -253,7 +253,7 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'frozen-lake',
         backgroundColor: 'oklch(24.0% 0.035 230.0 / 1)',
         mainColor: 'oklch(90.0% 0.075 225.0 / 1)',
-        secondaryColor: 'oklch(80.0% 0.055 235.0 / 1)'
+        secondaryColor: 'oklch(80.0% 0.055 235.0 / 1)',
       },
       {
         id: 'taiko-thunder',
@@ -1064,15 +1064,12 @@ const baseThemeSets: BaseThemeGroup[] = [
         secondaryColor: 'oklch(75.0% 0.075 90.0 / 1)',
       },
       {
-<<<<<<< HEAD
         id: 'bento-box',
         backgroundColor: 'oklch(22.0% 0.025 45.0 / 1)',
         mainColor: 'oklch(70.0% 0.175 20.0 / 1)',
         secondaryColor: 'oklch(75.0% 0.165 145.0 / 1)',
       },
       {
-=======
->>>>>>> 18877926 (removed redundant color themes)
         id: 'hanabi-festival',
         backgroundColor: 'oklch(14.0% 0.055 275.0 / 1)',
         mainColor: 'oklch(85.0% 0.200 35.0 / 1)',
@@ -1088,7 +1085,9 @@ const baseThemeSets: BaseThemeGroup[] = [
         id: 'umbrella-rain',
         backgroundColor: 'oklch(22.0% 0.018 250.0 / 1)',
         mainColor: 'oklch(70.0% 0.175 225.0 / 1)',
-        secondaryColor: 'oklch(75.0% 0.145 350.0 / 1)'},{
+        secondaryColor: 'oklch(75.0% 0.145 350.0 / 1)',
+      },
+      {
         id: 'tanuki-mischief',
         backgroundColor: 'oklch(22.0% 0.042 55.0 / 1)',
         mainColor: 'oklch(68.0% 0.125 65.0 / 1)',
