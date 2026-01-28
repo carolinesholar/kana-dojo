@@ -66,9 +66,6 @@ const DEMO_KANJI = [
   { kanji: '日', meaning: 'sun', reading: 'hi' },
   { kanji: '月', meaning: 'moon', reading: 'tsuki' },
   { kanji: '木', meaning: 'tree', reading: 'ki' },
-  // 口 (kuchi) - The mouth kanji: A perfect square, beautifully simple and iconic!
-  // This is one of the most elegant kanji - it literally depicts an open mouth.
-  // Its geometric perfection makes it instantly recognizable and memorable.
   { kanji: '口', meaning: 'mouth', reading: 'kuchi' },
 ];
 
@@ -594,20 +591,8 @@ const DemoGame = () => {
   const showContinue = bottomBarState === 'correct';
   const showTryAgain = bottomBarState === 'wrong';
 
-  // Determine if tiles should be displayed larger (for Japanese text)
-  const isLargeTile = currentQuestion.type === 'kanji'; // || currentQuestion.type === 'vocab' - vocab commented out
-
-  // Get type label for display
-  const getTypeLabel = () => {
-    switch (currentQuestion.type) {
-      case 'kana':
-        return 'kana';
-      case 'kanji':
-        return 'kanji';
-      // case 'vocab':
-      //   return 'vocab';
-    }
-  };
+  // Demo answers are romaji/meanings, so keep option tiles at the standard size.
+  const isLargeTile = false;
 
   return (
     <div className='flex min-h-[100dvh] max-w-[100dvw] flex-col items-center gap-6 px-4 md:gap-10'>
@@ -615,15 +600,16 @@ const DemoGame = () => {
       <div className='mt-2 flex w-full flex-col md:mt-4 md:w-2/3 lg:w-1/2'>
         {/* Header with exit and progress */}
         {SHOW_PROGRESS_BAR && (
-          <div className='flex w-full flex-row items-center justify-between gap-3 md:gap-4'>
+          <div className='flex w-full flex-row items-center gap-3 md:gap-4'>
             <Link href='/' onClick={handleExit}>
               <X
                 size={32}
                 className='text-[var(--border-color)] duration-250 hover:scale-125 hover:cursor-pointer hover:text-[var(--secondary-color)]'
               />
             </Link>
-            <DemoProgressBar score={score} />
-            <div className='w-8' /> {/* Spacer to balance layout */}
+            <div className='flex-1'>
+              <DemoProgressBar score={score} />
+            </div>
           </div>
         )}
 
@@ -634,9 +620,7 @@ const DemoGame = () => {
             {SHOW_GAME_MODE_NAME && (
               <p className='flex w-1/2 items-center justify-start gap-1 text-lg sm:gap-2 sm:pl-1 md:text-xl'>
                 <MousePointerClick className='text-[var(--main-color)]' />
-                <span className='text-[var(--secondary-color)]'>
-                  {getTypeLabel()}
-                </span>
+                <span className='text-[var(--secondary-color)]'>demo</span>
               </p>
             )}
 
@@ -687,7 +671,12 @@ const DemoGame = () => {
 
             {/* Answer Row Area */}
             <div className='flex w-full flex-col items-center'>
-              <div className='flex min-h-[5rem] w-full items-center border-b-2 border-[var(--border-color)] px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2'>
+              <div
+                className={clsx(
+                  'flex w-full items-center border-b-2 border-[var(--border-color)] px-2 pb-2 md:w-3/4 lg:w-2/3 xl:w-1/2',
+                  isLargeTile ? 'min-h-[5.5rem]' : 'min-h-[5rem]',
+                )}
+              >
                 <motion.div
                   className='flex flex-row flex-wrap justify-start gap-3'
                   variants={celebrationContainerVariants}
