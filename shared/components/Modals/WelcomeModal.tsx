@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
 import {
@@ -68,15 +68,38 @@ const WelcomeModal = () => {
       process.env.NEXT_PUBLIC_VERCEL_ENV !== 'production';
     const isBaseRoute =
       pathname === '/' || pathname === '/en' || pathname === '/ja';
+    const isDemoRoute = pathname === '/demo' || pathname.endsWith('/demo');
+    const shouldShowAfterDemo =
+      typeof window !== 'undefined' &&
+      sessionStorage.getItem('welcome-return-from-demo') === 'true';
+
+    if (isDemoRoute) {
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem('welcome-return-from-demo', 'true');
+      }
+      setIsVisible(false);
+      return;
+    }
 
     // Show modal if user hasn't seen it, OR in dev/preview mode on home page
+    if (shouldShowAfterDemo && isBaseRoute) {
+      if (typeof window !== 'undefined') {
+        sessionStorage.removeItem('welcome-return-from-demo');
+      }
+      setHasSeenWelcome(false);
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+      }, 500);
+      return () => clearTimeout(timer);
+    }
+
     if (!hasSeenWelcome || ((isDev || isPreviewDeployment) && isBaseRoute)) {
       const timer = setTimeout(() => {
         setIsVisible(true);
       }, 500);
       return () => clearTimeout(timer);
     }
-  }, [hasSeenWelcome, pathname]);
+  }, [hasSeenWelcome, pathname, setHasSeenWelcome]);
 
   useEffect(() => {
     setLocalTheme(selectedTheme);
@@ -90,6 +113,12 @@ const WelcomeModal = () => {
     }
   }, [step]);
 
+  const handleClose = useCallback(() => {
+    playClick();
+    setIsVisible(false);
+    setHasSeenWelcome(true);
+  }, [playClick, setHasSeenWelcome]);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isVisible) {
@@ -99,18 +128,14 @@ const WelcomeModal = () => {
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isVisible]);
-
-  const handleClose = () => {
-    playClick();
-    setIsVisible(false);
-    setHasSeenWelcome(true);
-  };
+  }, [handleClose, isVisible]);
 
   const handleTryDemo = () => {
     playClick();
     setIsVisible(false);
-    setHasSeenWelcome(false);
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('welcome-return-from-demo', 'true');
+    }
     router.push('/demo');
   };
 
