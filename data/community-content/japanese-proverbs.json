@@ -563,12 +563,18 @@
   "romaji": "Neko ni katsuobushi",
   "english": "Dried bonito to a cat",
   "meaning": "Leave temptation unattended at your own risk"
-}
-  {,
+  },
+  {
     "japanese": "石の上にも三年",
     "romaji": "Ishi no ue ni mo san nen",
     "english": "Three years on a stone",
     "meaning": "Perseverance leads to success; even cold stone warms with patience"
-  }
+  },
+  {
+  "japanese": "千里の道も一歩から",
+  "romaji": "Senri no michi mo ippo kara",
+  "english": "A journey of a thousand miles begins with one step",
+  "meaning": "Start small to reach big goals"
+}
 ]
 
